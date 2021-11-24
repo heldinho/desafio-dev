@@ -23,20 +23,26 @@ const db = require('knex')({
 app.listen(PORT);
 
 app.get('/shops', (req, res) => {
-  db('shops').then(data => {
-    res.send(data);
-  });
+  db('shops')
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
 
-app.get('/remessas', (req, res, next) => {
-  db('remessas').then(data => {
-    res.send(data);
-  }, next);
+app.get('/remessas', (req, res) => {
+  db('remessas')
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
 
-app.get('/remessa/:taxId', (req, res, next) => {
-  //
-});
+app.get('/remessa/:taxId', (req, res) => {});
 
 app.post('/remessas', (req, res) => {
   const body = req.body;
@@ -44,6 +50,6 @@ app.post('/remessas', (req, res) => {
     db('remessas').insert(body);
     res.json('ok');
   } else {
-    res.json('body invalid');
+    res.json('body invalid, type array.');
   }
 });
