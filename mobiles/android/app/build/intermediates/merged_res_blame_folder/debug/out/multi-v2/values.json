@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobile\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobiles\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HFPSIS\\.gradle\\caches\\transforms-3\\7b5fb814f3ced17bcc4aff07f638b6b1\\transformed\\fragment-1.2.1\\res\\values\\values.xml",
@@ -20,23 +20,6 @@
                         "endLines": "582,624,5885,5889",
                         "endColumns": "56,63,24,24",
                         "endOffsets": "37803,39869,378048,378197"
-                    }
-                },
-                {
-                    "source": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobile\\android\\app\\build\\generated\\res\\resValues\\debug\\values\\gradleResValues.xml",
-                    "from": {
-                        "startLines": "6,8",
-                        "startColumns": "4,4",
-                        "startOffsets": "161,269",
-                        "endColumns": "63,68",
-                        "endOffsets": "220,333"
-                    },
-                    "to": {
-                        "startLines": "644,645",
-                        "startColumns": "4,4",
-                        "startOffsets": "41060,41124",
-                        "endColumns": "63,68",
-                        "endOffsets": "41119,41188"
                     }
                 },
                 {
@@ -59,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobile\\android\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobiles\\android\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
@@ -73,6 +56,25 @@
                         "startOffsets": "43579",
                         "endColumns": "43",
                         "endOffsets": "43618"
+                    }
+                },
+                {
+                    "source": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobiles\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "1,5,10",
+                        "startColumns": "2,2,2",
+                        "startOffsets": "14,224,467",
+                        "endLines": "4,9,14",
+                        "endColumns": "10,10,10",
+                        "endOffsets": "221,464,804"
+                    },
+                    "to": {
+                        "startLines": "812,2875,3244",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "59231,195416,219380",
+                        "endLines": "815,2879,3248",
+                        "endColumns": "10,10,10",
+                        "endOffsets": "59438,195656,219717"
                     }
                 },
                 {
@@ -95,23 +97,6 @@
                     }
                 },
                 {
-                    "source": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobile\\android\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "2",
-                        "startOffsets": "172",
-                        "endColumns": "55",
-                        "endOffsets": "225"
-                    },
-                    "to": {
-                        "startLines": "198",
-                        "startColumns": "4",
-                        "startOffsets": "12667",
-                        "endColumns": "57",
-                        "endOffsets": "12720"
-                    }
-                },
-                {
                     "source": "C:\\Users\\HFPSIS\\.gradle\\caches\\transforms-3\\62ece1a98ef095db320a1cbbfb42e6fd\\transformed\\jetified-flipper-0.54.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3",
@@ -126,6 +111,23 @@
                         "startOffsets": "37625,37694",
                         "endColumns": "68,56",
                         "endOffsets": "37689,37746"
+                    }
+                },
+                {
+                    "source": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobiles\\android\\app\\build\\generated\\res\\resValues\\debug\\values\\gradleResValues.xml",
+                    "from": {
+                        "startLines": "6,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "161,269",
+                        "endColumns": "63,68",
+                        "endOffsets": "220,333"
+                    },
+                    "to": {
+                        "startLines": "644,645",
+                        "startColumns": "4,4",
+                        "startOffsets": "41060,41124",
+                        "endColumns": "63,68",
+                        "endOffsets": "41119,41188"
                     }
                 },
                 {
@@ -184,20 +186,20 @@
                     }
                 },
                 {
-                    "source": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobile\\node_modules\\expo-splash-screen\\android\\build\\intermediates\\packaged_res\\debug\\values\\values.xml",
+                    "source": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobiles\\android\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "3,4",
-                        "startColumns": "4,4",
-                        "startOffsets": "113,201",
-                        "endColumns": "87,96",
-                        "endOffsets": "196,293"
+                        "startLines": "3",
+                        "startColumns": "2",
+                        "startOffsets": "172",
+                        "endColumns": "55",
+                        "endOffsets": "225"
                     },
                     "to": {
-                        "startLines": "720,721",
-                        "startColumns": "4,4",
-                        "startOffsets": "47932,48020",
-                        "endColumns": "87,96",
-                        "endOffsets": "48015,48112"
+                        "startLines": "198",
+                        "startColumns": "4",
+                        "startOffsets": "12667",
+                        "endColumns": "57",
+                        "endOffsets": "12720"
                     }
                 },
                 {
@@ -258,25 +260,6 @@
                     }
                 },
                 {
-                    "source": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobile\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "1,5,10",
-                        "startColumns": "2,2,2",
-                        "startOffsets": "14,224,467",
-                        "endLines": "4,9,14",
-                        "endColumns": "10,10,10",
-                        "endOffsets": "221,464,804"
-                    },
-                    "to": {
-                        "startLines": "812,2875,3244",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "59231,195416,219380",
-                        "endLines": "815,2879,3248",
-                        "endColumns": "10,10,10",
-                        "endOffsets": "59438,195656,219717"
-                    }
-                },
-                {
                     "source": "C:\\Users\\HFPSIS\\.gradle\\caches\\transforms-3\\52d52cced8bebfb30ad04223b3b9dbf5\\transformed\\jetified-appcompat-resources-1.2.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,29,36,47,74",
@@ -312,6 +295,23 @@
                         "endLines": "6028,6733",
                         "endColumns": "22,22",
                         "endOffsets": "384222,419448"
+                    }
+                },
+                {
+                    "source": "C:\\HFPSIS\\htdocs\\___DEV\\___react\\desafio-dev\\mobiles\\node_modules\\expo-splash-screen\\android\\build\\intermediates\\packaged_res\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "113,201",
+                        "endColumns": "87,96",
+                        "endOffsets": "196,293"
+                    },
+                    "to": {
+                        "startLines": "720,721",
+                        "startColumns": "4,4",
+                        "startOffsets": "47932,48020",
+                        "endColumns": "87,96",
+                        "endOffsets": "48015,48112"
                     }
                 },
                 {

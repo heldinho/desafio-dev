@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
-import { Layout, Menu, Row, Col, Input, Button } from 'antd';
+import { Layout, Menu, Row, Col, Input, Button, notification } from 'antd';
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -19,6 +19,26 @@ export default function App() {
   const [total, setTotal] = React.useState(0);
   const [collapsed, setCollapsed] = React.useState(false);
   const inputFile = React.useRef(null);
+  const [msgNotification, setMsgNotification] = React.useState({
+    message: '',
+    description: '',
+  });
+
+  const openNotificationWithIcon = type => {
+    notification[type]({
+      message: msgNotification.message,
+      description: msgNotification.description,
+    });
+  };
+
+  const onNotification = arg => {
+    const { message, description, type } = arg;
+    setMsgNotification({
+      message,
+      description,
+    });
+    openNotificationWithIcon(type);
+  };
 
   const toggle = () => {
     setCollapsed(prevCollapsed => !prevCollapsed);
@@ -28,16 +48,35 @@ export default function App() {
     if (data.length <= 0) return;
     Http.create(data)
       .then(data => {
-        if (!data) window.alert('Error');
-        else {
+        if (data.error) {
+          onNotification({
+            type: 'error',
+            message: 'Remessa!',
+            description: 'Erro ao salvar remessa, tente novamente mais tarde.',
+          });
+        } else if (data.success) {
           setData([]);
           setTotal(0);
           inputFile.current.value = '';
-          window.alert('Success');
+          onNotification({
+            type: 'success',
+            message: 'Remessa!',
+            description: 'Remessa salva com sucesso.',
+          });
+        } else {
+          onNotification({
+            type: 'error',
+            message: 'Remessa!',
+            description: 'Erro interno, tente novamente mais tarde.',
+          });
         }
       })
       .catch(() => {
-        window.alert('Error');
+        onNotification({
+          type: 'error',
+          message: 'Remessa!',
+          description: 'Erro ao salvar remessa, tente novamente mais tarde.',
+        });
       });
   };
 

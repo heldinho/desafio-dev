@@ -1,21 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StatusBar as Status, SafeAreaView } from 'react-native';
+import ButtonOptions from './src/components/ButtonOptions';
+import Header from './src/components/Header';
+import ListData from './src/components/ListData';
+import * as Http from './src/services';
 export default function App() {
+  const [data, setData] = React.useState([]);
+
+  React.useEffect(() => {
+    refreshList();
+  }, []);
+
+  const refreshList = () => {
+    Http.getAllShops()
+      .then(dt => {
+        if (dt) {
+          setData(dt);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <>
       <StatusBar style="auto" />
-    </View>
+      <SafeAreaView style={{ ...container }}>
+        <Header />
+        <ButtonOptions />
+        <ListData data={data} />
+      </SafeAreaView>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const container = {
+  marginTop: Status.currentHeight,
+};

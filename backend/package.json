@@ -13,9 +13,10 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "knex": "^0.18.0",
+    "knex": "^0.18.4",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
+    "pg": "^8.7.1",
     "require-dir": "^1.2.0",
     "restify": "^8.3.3",
     "restify-errors": "^8.0.0"
