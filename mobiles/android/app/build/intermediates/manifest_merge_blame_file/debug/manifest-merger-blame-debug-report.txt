@@ -163,12 +163,20 @@
 88            android:value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader" />
 88-->[:expo-modules-core] C:\HFPSIS\htdocs\___DEV\___react\desafio-dev\mobiles\node_modules\expo-modules-core\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-86
 89
-90        <service
-90-->[androidx.room:room-runtime:2.1.0] C:\Users\HFPSIS\.gradle\caches\transforms-3\8cc4149e3bbd3098633168f95e5c4ac7\transformed\room-runtime-2.1.0\AndroidManifest.xml:25:9-27:40
-91            android:name="androidx.room.MultiInstanceInvalidationService"
-91-->[androidx.room:room-runtime:2.1.0] C:\Users\HFPSIS\.gradle\caches\transforms-3\8cc4149e3bbd3098633168f95e5c4ac7\transformed\room-runtime-2.1.0\AndroidManifest.xml:26:13-74
-92            android:exported="false" />
-92-->[androidx.room:room-runtime:2.1.0] C:\Users\HFPSIS\.gradle\caches\transforms-3\8cc4149e3bbd3098633168f95e5c4ac7\transformed\room-runtime-2.1.0\AndroidManifest.xml:27:13-37
-93    </application>
+90        <activity
+90-->[com.nbsp:materialfilepicker:1.9.1] C:\Users\HFPSIS\.gradle\caches\transforms-3\be5ec4103120a703df18a98aac41d545\transformed\jetified-materialfilepicker-1.9.1\AndroidManifest.xml:14:9-17:20
+91            android:name="com.nbsp.materialfilepicker.ui.FilePickerActivity"
+91-->[com.nbsp:materialfilepicker:1.9.1] C:\Users\HFPSIS\.gradle\caches\transforms-3\be5ec4103120a703df18a98aac41d545\transformed\jetified-materialfilepicker-1.9.1\AndroidManifest.xml:15:13-77
+92            android:theme="@style/MFP_BaseTheme" >
+92-->[com.nbsp:materialfilepicker:1.9.1] C:\Users\HFPSIS\.gradle\caches\transforms-3\be5ec4103120a703df18a98aac41d545\transformed\jetified-materialfilepicker-1.9.1\AndroidManifest.xml:16:13-49
+93        </activity>
 94
-95</manifest>
+95        <service
+95-->[androidx.room:room-runtime:2.1.0] C:\Users\HFPSIS\.gradle\caches\transforms-3\8cc4149e3bbd3098633168f95e5c4ac7\transformed\room-runtime-2.1.0\AndroidManifest.xml:25:9-27:40
+96            android:name="androidx.room.MultiInstanceInvalidationService"
+96-->[androidx.room:room-runtime:2.1.0] C:\Users\HFPSIS\.gradle\caches\transforms-3\8cc4149e3bbd3098633168f95e5c4ac7\transformed\room-runtime-2.1.0\AndroidManifest.xml:26:13-74
+97            android:exported="false" />
+97-->[androidx.room:room-runtime:2.1.0] C:\Users\HFPSIS\.gradle\caches\transforms-3\8cc4149e3bbd3098633168f95e5c4ac7\transformed\room-runtime-2.1.0\AndroidManifest.xml:27:13-37
+98    </application>
+99
+100</manifest>

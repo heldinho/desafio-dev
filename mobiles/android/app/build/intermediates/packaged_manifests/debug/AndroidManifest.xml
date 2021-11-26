@@ -87,6 +87,11 @@
             android:name="org.unimodules.core.AppLoader#react-native-headless"
             android:value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader" />
 
+        <activity
+            android:name="com.nbsp.materialfilepicker.ui.FilePickerActivity"
+            android:theme="@style/MFP_BaseTheme" >
+        </activity>
+
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:exported="false" />
