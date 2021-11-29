@@ -12,7 +12,7 @@ services:
     container_name: mysql
     restart: always
     volumes:
-      - "./backend/setup.sql:/docker-entrypoint-initdb.d/setup.sql"
+      - ./backend/setup.sql:/docker-entrypoint-initdb.d/setup.sql
     ports:
      - "3307:3306"
     networks:
@@ -27,7 +27,7 @@ services:
     image: nginx
     container_name: frontend
     volumes:
-      - nginx/nginx.conf /etc/nginx/conf.d
+      - ./frontend/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./frontend/build:/usr/share/nginx/html
     ports:
       - 80:80
