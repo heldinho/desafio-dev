@@ -1,12 +1,7 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-CREATE DATABASE `cnab`;
+-- CREATE DATABASE `cnab`;
 USE `cnab`;
 
-CREATE TABLE `remessas` (
+CREATE TABLE IF NOT EXISTS `remessas` (
   `id` text NOT NULL,
   `type` text NOT NULL,
   `date` text NOT NULL,
@@ -18,7 +13,7 @@ CREATE TABLE `remessas` (
   `shop` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `shops` (
+CREATE TABLE IF NOT EXISTS `shops` (
   `id` text NOT NULL,
   `taxId` text NOT NULL,
   `owner` text NOT NULL,

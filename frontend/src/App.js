@@ -1,83 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { v4 as uuid } from 'uuid';
-import { Layout, Menu, Row, Col, Input, Button, notification } from 'antd';
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  UploadOutlined,
-} from '@ant-design/icons';
-import DataTable from './components/DataTable';
-import * as util from './utils';
 import { Switch, Route, Link } from 'react-router-dom';
+import { Layout, Menu, Row, Col, Input, Button, notification } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
+import * as util from './utils';
 import * as Http from './services';
+import DataTable from './components/DataTable';
 import ListCnab from './views/ListCnab';
+import MSG_TYPES from './types/messages';
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 
 export default function App() {
   const [data, setData] = React.useState([]);
   const [total, setTotal] = React.useState(0);
-  const [collapsed, setCollapsed] = React.useState(false);
   const inputFile = React.useRef(null);
-  const [msgNotification, setMsgNotification] = React.useState({
-    message: '',
-    description: '',
-  });
 
-  const openNotificationWithIcon = type => {
+  const openNotificationWithIcon = arg => {
+    const { type, message, description } = arg;
     notification[type]({
-      message: msgNotification.message,
-      description: msgNotification.description,
+      message: message,
+      description: description,
     });
   };
 
   const onNotification = arg => {
-    const { message, description, type } = arg;
-    setMsgNotification({
-      message,
-      description,
-    });
-    openNotificationWithIcon(type);
+    openNotificationWithIcon(arg);
   };
 
-  const toggle = () => {
-    setCollapsed(prevCollapsed => !prevCollapsed);
-  };
-
-  const save = () => {
+  const save = async () => {
     if (data.length <= 0) return;
-    Http.create(data)
-      .then(data => {
-        if (data.error) {
-          onNotification({
-            type: 'error',
-            message: 'Remessa!',
-            description: 'Erro ao salvar remessa, tente novamente mais tarde.',
-          });
-        } else if (data.success) {
-          setData([]);
-          setTotal(0);
-          inputFile.current.value = '';
-          onNotification({
-            type: 'success',
-            message: 'Remessa!',
-            description: 'Remessa salva com sucesso.',
-          });
-        } else {
-          onNotification({
-            type: 'error',
-            message: 'Remessa!',
-            description: 'Erro interno, tente novamente mais tarde.',
-          });
-        }
-      })
-      .catch(() => {
-        onNotification({
-          type: 'error',
-          message: 'Remessa!',
-          description: 'Erro ao salvar remessa, tente novamente mais tarde.',
-        });
-      });
+    try {
+      const dt = await Http.create(data);
+      if (dt.error) {
+        onNotification(MSG_TYPES.REMESSAS.ERROR.FRONT);
+      } else if (dt.success) {
+        setData([]);
+        setTotal(0);
+        inputFile.current.value = '';
+        onNotification(MSG_TYPES.REMESSAS.SUCCESS);
+      }
+    } catch (err) {
+      onNotification(MSG_TYPES.REMESSAS.ERROR.BACK);
+    }
   };
 
   const load = async e => {
@@ -113,7 +78,7 @@ export default function App() {
 
   return (
     <Layout style={{ height: '100vh' }}>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+      <Sider trigger={null} collapsible>
         <div className="logo" />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
           <Menu.Item key="1" icon={<UploadOutlined />}>

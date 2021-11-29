@@ -17,4 +17,8 @@ const checkType = val => {
   return listTypes[type];
 };
 
-module.exports = checkType;
+function clear(value) {
+  return value && String(value).replace(/[^0-9]/g, '');
+}
+
+module.exports = { checkType, clear };

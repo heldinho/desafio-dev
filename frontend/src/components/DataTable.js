@@ -1,6 +1,6 @@
 import { Table } from 'antd';
 import { mask } from 'remask';
-import * as util from '../utils';
+import * as utils from '../utils';
 
 const pattern = {
   taxId: '999.999.999-99',
@@ -23,7 +23,7 @@ const columnShops = [
   {
     title: 'Valor',
     dataIndex: 'amount',
-    render: amount => util.numberToReal(parseFloat(amount)),
+    render: amount => utils.numberToReal(parseFloat(amount)),
   },
 ];
 
@@ -31,16 +31,17 @@ const columns = [
   {
     title: 'Tipo',
     dataIndex: 'type',
-    render: type => util.types[type],
+    render: type => utils.types[type],
   },
   {
     title: 'Data',
     dataIndex: 'date',
+    render: date => utils.formatDateToFront(date),
   },
   {
     title: 'Valor',
     dataIndex: 'amount',
-    render: amount => util.numberToReal(parseFloat(amount)),
+    render: amount => utils.numberToReal(parseFloat(amount)),
   },
   {
     title: 'CPF',

@@ -18,11 +18,11 @@ export default function ListCnab() {
     setLoading(true);
     Http.getAllShops()
       .then(dt => {
-        if (dt) {
-          setData(dt);
-        } else {
-          setLogs(old => [...old, 'Error!']);
+        if (dt.error) {
+          setLogs(old => [...old, `${dt.message}`]);
           btnLog.current.click();
+        } else if (dt.success) {
+          setData(dt.data);
         }
         setLoading(false);
       })
